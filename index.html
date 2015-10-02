@@ -3,9 +3,9 @@
 
 <script>
     function calcOrder(order, products){
-var  summ = 0;
-for (var i = 0; i < order.length; i++){
-  for (var j = 0; j < products.length; j++){
+var  summ = 0, i, j;
+for ( i = 0; i < order.length; i++){
+  for ( j = 0; j < products.length; j++){
   if(order[i][0]==products[j][0] && order[i][1] <= products[j][1]){
     summ += (order[i][1])*(products[j][2]);
   }
