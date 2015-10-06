@@ -25,11 +25,11 @@
         
         test('test calcOrder()', function(){
             strictEqual(calcOrder([['bavaria pizza', 1],['tomato juice', 2]],
-                                  [['bavaria pizza', 5, 65],['tomato juice', 20, 15]]), 95, 'nice');
+                                  [['bavaria pizza', 5, 65],['tomato juice', 20, 15]]), 95, '95 nice');
             strictEqual(calcOrder([['havayi pizza', 2],['dark beer', 5]],
-                                  [['havayi pizza', 3, 70],['dark beer', 50, 12]]), 200, 'nice');
+                                  [['havayi pizza', 3, 70],['dark beer', 50, 12]]), 200, '200 nice');
             strictEqual(calcOrder([['dion pizza', 1],['light beer', 3]],
-                                  [['dion pizza', 4, 75],['light beer', 2, 10]]), 75, 'xz');
+                                  [['dion pizza', 4, 75],['light beer', 2, 10]]), 75, '75 nice');
         });
 
 
