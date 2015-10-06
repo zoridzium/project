@@ -7,8 +7,8 @@
     <script>
         function calcOrder(order, products){
             var summ = 0, i, j,
-                    orderLength = order.length,
-                    productsLength = products.length;
+                orderLength = order.length,
+                productsLength = products.length;
             for ( i = 0; i < orderLength; i++){
                 for ( j = 0; j < productsLength; j++){
                     if(order[i][0] == products[j][0] && order[i][1] <= products[j][1]){
@@ -31,10 +31,7 @@
             strictEqual(calcOrder([['dion pizza', 1],['light beer', 3]],
                                   [['dion pizza', 4, 75],['light beer', 2, 10]]), 75, '75 nice');
         });
-
-
     </script>
-
 </head>
 <body>
     <div id="qunit"></div>
