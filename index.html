@@ -1,22 +1,43 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <link href='http://code.jquery.com/qunit/qunit-1.19.0.css' rel="stylesheet" type="text/css">
+    <script src='http://code.jquery.com/qunit/qunit-1.19.0.js'></script>
 
-<script>
-    function calcOrder(order, products){
-var  summ = 0, i, j;
-for ( i = 0; i < order.length; i++){
-  for ( j = 0; j < products.length; j++){
-  if(order[i][0]==products[j][0] && order[i][1] <= products[j][1]){
-    summ += (order[i][1])*(products[j][2]);
-  }
- }
-}
- return summ;
-    }
-</script>
+    <script>
+        function calcOrder(order, products){
+            var summ = 0, i, j,
+                    orderLength = order.length,
+                    productsLength = products.length;
+            for ( i = 0; i < orderLength; i++){
+                for ( j = 0; j < productsLength; j++){
+                    if(order[i][0] == products[j][0] && order[i][1] <= products[j][1]){
+                        summ += order[i][1]*products[j][2];
+                    }
+                }
+            }
+            return summ;
+        }
+        console.log(calcOrder([['dion pizza', 1],['light beer', 3]],
+                              [['dion pizza', 4, 75],['light beer', 2, 10]]));
+
+        <!--****************************************test************************************-->
+        
+        test('test calcOrder()', function(){
+            strictEqual(calcOrder([['bavaria pizza', 1],['tomato juice', 2]],
+                                  [['bavaria pizza', 5, 65],['tomato juice', 20, 15]]), 95, 'nice');
+            strictEqual(calcOrder([['havayi pizza', 2],['dark beer', 5]],
+                                  [['havayi pizza', 3, 70],['dark beer', 50, 12]]), 200, 'nice');
+            strictEqual(calcOrder([['dion pizza', 1],['light beer', 3]],
+                                  [['dion pizza', 4, 75],['light beer', 2, 10]]), 75, 'xz');
+        });
+
+
+    </script>
 
 </head>
 <body>
-
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
 </body>
 </html>
